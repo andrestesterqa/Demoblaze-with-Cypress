@@ -12,6 +12,15 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
+Cypress.Commands.add("formnPlaceOrder", (toName, country, city, creditCard, month, year)  => {
+    cy.get("#name").type(toName);
+    cy.get("#country").type(country);
+    cy.get("#city").type(city);
+    cy.get("#card").type(creditCard);
+    cy.get("#month").type(month)
+    cy.get("#year").type(year)
+    cy.get("button[onclick='purchaseOrder()']").click()
+})
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
